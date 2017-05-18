@@ -14,13 +14,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="getBlogTypeData" resultMap="BlogTypeResult">
 		SELECT 
-		  t2.*,
+		  t2.id,t2.orderNum,t2.typeName,
 		  COUNT(t1.id) AS blogCount 
 		FROM
 		  t_blog t1 
 		  RIGHT JOIN t_blogtype t2 
 		ON t1.type_id = t2.id 
-		GROUP BY t2.typeName 
+		GROUP BY  t2.id,t2.orderNum,t2.typeName 
 		ORDER BY t2.orderNum 
 	</select>
 	

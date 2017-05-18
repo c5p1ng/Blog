@@ -26,7 +26,7 @@ public class InitBloggerData implements ServletContextListener, ApplicationConte
 	private static ApplicationContext applicationContext;
 	
 	public void contextInitialized(ServletContextEvent sce) {
-		System.out.println(applicationContext);
+		System.out.println("=============:"+applicationContext);
 		//先获取servlet上下文
 		ServletContext application = sce.getServletContext();
 		

@@ -25,8 +25,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    COUNT(*) AS blogCount
 		  FROM
 		    t_blog 
-		  GROUP BY DATE_FORMAT(releaseDate,'%Y年%m月')
-		  ORDER BY releaseDate DESC
+		  GROUP BY releaseDateStr
+		  ORDER BY releaseDateStr DESC
 	</select>
 	
 	<select id="listBlog" parameterType="Map" resultMap="BlogResult">
